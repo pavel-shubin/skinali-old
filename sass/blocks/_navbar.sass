@@ -30,9 +30,10 @@
   padding: 16px 0
   width: 100%
   background-color: $primary
-  transform: translateX(-100%)
+  transition: 0.2s
+  transform: translateY(-200%)
   &_active
-    transform: translateX(0)
+    transform: translateY() // включение панели меню
   &__nav
     display: flex
     align-items: center
@@ -74,3 +75,19 @@
     font-size: 14px
     color: $text-color-light
     +bold
+@media (max-width: 991px)
+  .navbar
+     &__mobile, &__landline
+       display: none
+@media (max-width: 576px)
+  .logo
+    display: none
+  .menu
+    transform: translateY() // включение адаптивной панели меню
+    &-button
+      height: 60px
+    &__nav
+      flex-direction: column
+    &__link
+      margin-bottom: 20px
+       
